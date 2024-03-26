@@ -40,7 +40,7 @@ if (commandOverride = false)
     if (engineIndicatorLight === "NOT red blinking" && fuelLevel > 18000){
     console.log("launch");
 } else {
-    console.log("Launch");
+    console.log("launch");
 }
 
 /* 6) b) Code the following if/else check:
