@@ -3,6 +3,7 @@
 
 // Given the values for fuelLevel, crewStatus and computerStatus, should launchReady be true or false?
 // Is the program behaving as expected?
+      // The program is not working as launchReady for the first console.log is false and the second is true.
 
 let launchReady = false;
 let fuelLevel = 17000;
