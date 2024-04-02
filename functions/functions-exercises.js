@@ -21,15 +21,11 @@ function makeSquare(size) {
 let square = '';
 
 for (let i = 0; i < size; i++) {
-    for (let j = 0; j < size; j++) {
-        square += '#';
-    }
-    
     square += (makeLine(size) + '\n');
 }
     return square;
 } 
-console.log(`\nThis is a square:\n${makeSquare(3, 3)}`);
+console.log(`\nThis is a square:\n${makeSquare(5)}`);
 
 //  3.   Write a function makeRectangle(width, height) that returns a rectangle with the given width and height. 
 //       Use your makeLine function to do this.
@@ -37,8 +33,8 @@ console.log(`\nThis is a square:\n${makeSquare(3, 3)}`);
 function makeRectangle(width, height) {
     let rectangle = '';
 
-    for (let i = 0; i < height; i++) {
-        rectangle += (makeLine(width) + '\n');
+    for (let i = 0; i < height; i++) {              //we want less than height because it's the number of lines to be printed
+        rectangle += (makeLine(width) + '\n');      //width is going to be the number of characters in each line
     }
     return rectangle;
 } 
@@ -85,7 +81,7 @@ function makeIsoscelesTriangle(height) {
     let triangle = '';
 
     for (let i = 0; i < height; i++) {
-      triangle += (makeSpaceLine(height - i - 1, 2*i + 1) + '\n');
+      triangle += ('\n' + makeSpaceLine(height - i - 1, 2*i + 1));      //formula given in textbook
     }
     return triangle;
   }
@@ -95,18 +91,16 @@ function makeIsoscelesTriangle(height) {
 
   function makeDiamond(height) {
     let diamond = '';
-    let reversed = '';
+    let top = makeIsoscelesTriangle(height);
+    let bottom = '';
 
-    for (let i = 0; i < height; i++) {
-        
-
-        diamond += (makeSpaceLine(height - i - 1, 2*i + 1) + '\n');
-        reversed = diamond + reversed;
-   }                     
-    
-    return reversed;
- }
-console.log(`\nThis is not a diamond:\n${makeDiamond(6)}`);
+        for (let i = 0; i < top.length; i++) {
+            bottom = top[i] + bottom;
+        }
+        diamond = top + '\n' + bottom;
+        return diamond;
+    }
+console.log(`\nThis is a diamond:\n${makeDiamond(6)}`);
 
   //    8.  Bonus Mission: 
   //        Refactor your functions so that they take a single character as a parameter, and draw the shapes with that character instead of always using '#'. 
