@@ -20,8 +20,8 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
   let meal = [];                                      //needs to be here so when the loop starts over it clears out the last array and puts a new one in its place
         for (let j = 0; j < pantry.length; j++){      //Inner loop: creating individaul meals
           meal.push(pantry[j][i]);                    //[j]: looks at the arrays i.e. proteins, grains
-          console.log(meal);                          //[i]: looks at the index in each array and stays the same i.e. chicken, rice, peas, juice, apple
-        }
+          //console.log(meal);                          //[i]: looks at the index in each array and stays the same i.e. chicken, rice, peas, juice, apple
+        }                                             //pantry[j][i]: we go to pantry, then inside that and want the indexes of [j] so [j] first and then [i] to get it's indexes
         meals.push(meal);
 }
 
@@ -34,7 +34,7 @@ function askForNumber() {
   
   /// CODE YOUR SOLUTION TO PART B here ///
 
-while (numMeals > 6 || numMeals < 1 || isNaN(numMeals)) {
+while (numMeals > 6 || numMeals < 1 || isNaN(numMeals)) {                           //use while loop to validate to make sure the user enters a number 1-6 and will keep asking them until they enter a vaild number
   numMeals = input.question("Please enter a number between 1 and 6:\t ");
 
 } 
@@ -47,11 +47,10 @@ function generatePassword(string1, string2) {
   let code = '';
 
   /// Code your Bonus Mission Solution here ///
-string1 = "1234";
-string2 = "5678";
+
 
 for (let i = 0; i < string1.length; i++) {
-      if (i < string1.length)
+      code += string1[i] + string2[i];
 }
 
   return code;
@@ -78,8 +77,8 @@ function runProgram() {
     /// TEST PART C HERE ///
   /// UNCOMMENT the remaining commented lines and change the password1 and password2 strings to ensure your code is doing its job ///
 
-  let password1 = '';
-  let password2 = '';
+  let password1 = 'LoOt'; //'1234';   'ABCDEF';
+  let password2 = 'oku!'; //'5678';   'notyet';
   console.log("Time to run the password generator so we can update the menu tomorrow.")
   console.log(`The new password is: ${generatePassword(password1, password2)}`);
 }
