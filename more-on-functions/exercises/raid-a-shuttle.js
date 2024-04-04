@@ -21,9 +21,6 @@ function holdStatus(arr){
 let fuelLevel = 200000;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
-console.log("Fuel level: " + checkFuel(fuelLevel));
-console.log("Hold status: " + holdStatus(cargoHold));
-
 let anonymousFunction = function(a) {
   if (checkFuel(a) === 'green') {
     return a - 100001;
@@ -33,6 +30,35 @@ let anonymousFunction = function(a) {
     return a;
   }
 }
+console.log(anonymousFunction());
+
+console.log("Fuel level: " + checkFuel(fuelLevel));
+console.log("Hold status: " + holdStatus(cargoHold));
+
+
+
+let array = [];
+let randomCargoFunction = function() {
+    cargoHold.splice(0,1);
+    cargoHold.splice(3,4);
+    array.push('meal kits', 'gold');
+    cargoHold.push('hockey pucks','books');
+
+    return randomCargoFunction;
+  }   
+console.log(randomCargoFunction());
+console.log(array);
+console.log(cargoHold);
+
+let irs = function(fuelLevel, cargoHold) {
+  
+  return `Raided ${anonymousFunction(fuelLevel)} kg of fuel from the tanks, and stole ${array[0]} and ${array[1]} from the cargo hold.`
+}
+console.log(irs());
+
+
+
+
 
 /* Steal some fuel from the shuttle:
  * /
