@@ -1,10 +1,37 @@
 // Code your selectRandomEntry function here:
 
-
-// Code your buildCrewArray function here:
-
-
+function selectRandomEntry(array) {
+  let randomSelect = Math.floor(Math.random()*array.length);
+  randomSelect = array[randomSelect];
+  return randomSelect;
+}
 let idNumbers = [291, 414, 503, 599, 796, 890];
+
+let randomArray = [];
+while(randomArray.length < 3) {
+  let randomCrewMember = selectRandomEntry(idNumbers);
+  if(!randomArray.includes(randomCrewMember)) {
+    randomArray.push(randomCrewMember);
+  } else {
+    console.log("This crew member is already in a mission.");
+  }
+}
+console.log(randomArray);
+// Code your buildCrewArray function here:
+function buildCrewArray(idArray, candArray) {
+  let crewArray = [];
+
+  for(let i = 0; i < candArray.length; i++) {
+    //let crewArray = [];
+    if (idArray.includes(candArray[i].astronautID)) {
+      crewArray.push(candArray[i]);
+    }
+  }
+  return crewArray;
+}
+//console.log(buildCrewArray(randomArray, animals));
+
+console.log(selectRandomEntry(idNumbers));
 
 // Here are the candidates and the 'animals' array:
 let candidateA = {
@@ -53,3 +80,8 @@ let candidateF = {
 let animals = [candidateA,candidateB,candidateC,candidateD,candidateE,candidateF];
 
 // Code your template literal and console.log statements:
+let crew = buildCrewArray(randomArray, animals);
+console.log(crew[0].astronautID, crew[1].astronautID, crew[2].astronautID);
+console.log(`${crew[0].name}, ${crew[1].name}, and ${crew[2].name} are going to space!`);
+
+console.log(buildCrewArray(randomArray, animals));
