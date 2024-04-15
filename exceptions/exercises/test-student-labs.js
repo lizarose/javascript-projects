@@ -19,6 +19,38 @@ let studentLabs = [
         return num * num;
     }
   }
-];
 
+  try {
+      runLab`This is trying to run...but not defined correctly...`
+  } catch(err) {
+    console.log(`Error thrown`)
+    console.log(`This is handling the error...`)
+  }
+  
+]
 gradeLabs(studentLabs);
+
+let studentLabs2 = [
+  {
+      student: 'Blake',
+      myCode: function (num) {
+        return Math.pow(num, num);
+      }
+  },
+  {
+      student: 'Jessica',
+      runLab: function (num) {
+        return Math.pow(num, num);
+      }
+  },
+  {
+      student: 'Mya',
+      runLab: function (num) {
+        return num * num;
+      }
+  }
+
+]
+
+gradeLabs(studentLabs2);
+
