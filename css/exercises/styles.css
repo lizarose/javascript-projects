@@ -1,11 +1,11 @@
 /* Start adding your styling below! */ 
 body {
-    background-color: yellow;
-    text-align: center;
+    background-color: rgb(255, 179, 0);
+    
 }
 
 p {
-    color: green;
+    color: rgb(33, 122, 63);
 }
 
 h1 {
@@ -17,9 +17,9 @@ h1 {
 }
 
 .cool-text {
-    color:blue;
+    color:rgb(25, 180, 219);
 }
 
 #list-color {
-    color: blueviolet;
+    color: rgb(13, 63, 135);
 }
