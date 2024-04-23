@@ -5,10 +5,27 @@
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <script src = "script.js"></script>
     </head>
+    
     <body>
         <h1>Flight Simulator</h1>
         <p id="statusReport">The shuttle is on the ground</p>
         <button id = "liftoffButton">Take off</button>
         <button id = "abortMission">Abort mission</button>
+       
+        <script>
+            let statusParagraph = document.getElementById("statusReport");
+            let abortButton = document.getElementById("abortMission");
+
+            abortButton.addEventListener("click", () => {
+                let confirmation = window.confirm("Are you sure you want to abort the mission?");
+                    if (confirmation) {
+                        statusParagraph.innerHTML = "Mission aborted! Space shuttle returning home.";
+                    }
+            });
+                document.getElementById("liftoffButton").addEventListener("click", () => {
+                    statusParagraph.innerHTML = "Houston! We have liftoff!";
+                });
+        </script>
+
     </body>
 </html>
