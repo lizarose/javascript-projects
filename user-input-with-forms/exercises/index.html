@@ -9,7 +9,40 @@
   </head>
   <body>
     <!-- TODO: add form here -->
-    
+    <form method="POST" action="https://handlers.education.launchcode.org/request-parrot">
+      
+      <!--Name Field  -->
+      <label>Test Name: <input type="text" name="testName" /></label>
+      
+      <!--Date Field  -->
+      <label>Test Date: <input type="date" name="testDate" /></label>
+
+      <!--Rocket Type Selector  -->
+      <label for="rocketType">Rocket Type: </label>
+            <select name="rocketType" id="rocketType">
+              <option value="select">Select One</option>
+              <option value="brant">Brant</option>
+              <option value="lynx">Lynx</option>
+              <option value="orion">Orion</option>
+              <option value="terrier">Terrier</option>
+            </select>
+      
+      <!--Rocket Boosters Number w/Min and Max  -->
+      <label>Number of Rocket Boosters: <input type="number" name="boosterCount" min="0" max="10" /></label>
+        
+      <!--Wind Rating w/Radio Inputs  -->
+      <label>Wind Rating: </label>
+            <input type="radio" id="noWind" name="windRating" value="0"/><label>No Wind: 0</label>
+            <input type="radio" id="mild" name="windRating" value="10" /><label>Mild: 10</label>
+            <input type="radio" id="strong" name="windRating" value="20" /><label>Strong: 20</label>
+      
+      <!--Production Servers w/Checkboxes  -->
+      <label>Use Production Grade Servers </label>
+            <input type="checkbox" id="on" name="productionServers" /><label>On</label>
+            <input type="checkbox" id="off" name="productionServers" /><label>Off</label>
+
+        <button>Run Simulation</button>
+    </form>
 
     <p>WARNING: This ONLY works in <b>replit</b> if this "result" page is opened in its own window. Click the icon that shows a box with an arrow coming out of it.
     </p>
